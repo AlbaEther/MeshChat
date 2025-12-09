@@ -61,7 +61,7 @@ class SettingsViewModel(
                 ownAccountRepository.setProfileUpdateTimestamp(currentTimestamp)
                 setSuccess(true)
             } catch (e: Exception) {
-                setError("Failed to update username")
+                setError("Fallo en cambiar el apodo")
             } finally {
                 setLoading(false)
             }
@@ -80,7 +80,7 @@ class SettingsViewModel(
                     setSuccess(true)
                 }
             } catch (e: Exception) {
-                setError("Failed to update profile image")
+                setError("Fallo en cambiar la imagen de perfil")
             } finally {
                 setLoading(false)
             }
@@ -91,15 +91,15 @@ class SettingsViewModel(
         viewModelScope.launch {
             setLoading(true)
             try {
-                Log.d("SettingsViewModel", "Backup messages")
+                Log.d("SettingsViewModel", "Mensajes de respaldo")
                 val messages = chatRepository.getAllMessages()
                 val body = BackupRequestBody(uiState.value.profile.accountId, messages)
                 BackupApi.instance.backupMessages(body)
-                Log.d("SettingsViewModel", "Backup messages success")
+                Log.d("SettingsViewModel", "Mensajes de respaldo realizado")
 
                 setSuccess(true)
             } catch (e: Exception) {
-                setError("Failed to backup messages")
+                setError("Fallo en realizar el respaldo")
             } finally {
                 setLoading(false)
             }
@@ -120,7 +120,7 @@ class SettingsViewModel(
 
                 setSuccess(true)
             } catch (e: Exception) {
-                setError("Failed to retrieve messages")
+                setError("Fallo en recuperar los mensajes")
             } finally {
                 setLoading(false)
             }
