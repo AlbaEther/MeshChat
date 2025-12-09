@@ -83,7 +83,7 @@ fun ChatScreen(
     Scaffold(
         topBar = {
             ChatTopAppBar(
-                title = chatState.contact.username ?: "Connecting...",
+                title = chatState.contact.username ?: "Conectando...",
                 canNavigateBack = true,
                 onCallButtonClick = {
                     chatViewModel.sendCallRequest()
@@ -156,7 +156,7 @@ fun MessagesList(
     ) {
         items(groupedMessages) { item ->
             when (item) {
-                is String -> DateSeparator(date = item) // Se è una data
+                is String -> DateSeparator(date = item) // Si es una fecha
                 is Message -> MessageItem(
                     message = item,
                     accountId = accountId,
@@ -236,7 +236,7 @@ fun SendMessageInput(
             .fillMaxWidth()
             .padding(top = 5.dp, bottom = 10.dp)
     ) {
-        /* BOTTONE ALLEGATI E FILE PREVIEW */
+        /* BOTÓN DE ADJUNTOS Y VISTA PREVIA DE ARCHIVOS */
         if (!isTyping && !isRecording) {
             FileMessageInput(
                 fileUri = attachedFileUri,
@@ -253,7 +253,7 @@ fun SendMessageInput(
             )
         }
 
-        /* INPUT DI TESTO */
+        /* ENTRADA DE TEXTO */
         if (attachedFileUri == null && !isRecording) {
             TextMessageInput(
                 isTyping = isTyping,
@@ -267,7 +267,7 @@ fun SendMessageInput(
             )
         }
 
-        /* BOTTONE REGISTRAZIONE E GESTIONE AUDIO */
+        /* BOTÓN DE GRABACIÓN Y CONTROLES DE AUDIO */
         if ((!isTyping && attachedFileUri == null) || isRecording) {
             AudioRecordingControls(
                 isRecording = isRecording,
