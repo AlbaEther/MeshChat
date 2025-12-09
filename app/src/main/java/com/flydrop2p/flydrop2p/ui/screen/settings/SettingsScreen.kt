@@ -95,7 +95,7 @@ fun SettingsScreen(
 
     LaunchedEffect(settingsState.isSuccess) {
         if (settingsState.isSuccess) {
-            snackbarHostState.showSnackbar("Operation successful!")
+            snackbarHostState.showSnackbar("Operacion realizada")
             settingsViewModel.setSuccess(false)
         }
     }
@@ -186,7 +186,7 @@ fun SettingsScreen(
                     },
                     placeholder = {
                         Text(
-                            "Update username",
+                            "Cambiar apodo",
                             fontSize = 14.sp,
                         )
                     },
@@ -211,7 +211,7 @@ fun SettingsScreen(
                     modifier = Modifier.fillMaxWidth(),
                     enabled = usernameText.isNotBlank()
                 ) {
-                    Text("Save", color = MaterialTheme.colorScheme.surface)
+                    Text("Guardar", color = MaterialTheme.colorScheme.surface)
                 }
 
                 Button(
@@ -221,7 +221,7 @@ fun SettingsScreen(
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Backup messages", color = MaterialTheme.colorScheme.onPrimaryContainer)
+                    Text("Mensajes de respaldo", color = MaterialTheme.colorScheme.onPrimaryContainer)
                 }
 
                 Button(
@@ -231,7 +231,7 @@ fun SettingsScreen(
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.onSurface),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Retrieve messages", color = MaterialTheme.colorScheme.surface)
+                    Text("Recuperar mensajes", color = MaterialTheme.colorScheme.surface)
                 }
             }
         }

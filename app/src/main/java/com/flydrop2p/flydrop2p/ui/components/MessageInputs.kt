@@ -70,7 +70,7 @@ fun TextMessageInput(
         onValueChange = onValueChange,
         placeholder = {
             Text(
-                "Scrivi un messaggio...",
+                "Escribe un mensaje...",
                 fontSize = 14.sp,
             )
         },
