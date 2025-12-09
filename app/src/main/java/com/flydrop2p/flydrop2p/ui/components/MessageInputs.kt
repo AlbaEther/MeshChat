@@ -270,7 +270,7 @@ fun FileMessageInput(
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Delete,
-                        contentDescription = "Delete",
+                        contentDescription = "Eliminar",
                         tint = Color.Red
                     )
                 }
