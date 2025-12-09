@@ -85,7 +85,7 @@ fun HomeScreen(
         contentColor = MaterialTheme.colorScheme.onSurface,
         topBar = {
             FlyDropTopAppBar(
-                title = "Chat",
+                title = "Chats",
                 canNavigateBack = false,
                 isSettingsScreen = false,
                 onConnectionButtonClick = { homeViewModel.connect() },
@@ -152,7 +152,7 @@ fun ChatItem(
         }
 
         today - 1 == messageDay && currentYear == messageYear -> {
-            "Yesterday"
+            "Ayer"
         }
 
         today - messageDay in 1..6 && currentYear == messageYear -> {
@@ -202,7 +202,7 @@ fun ChatItem(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = chatPreview.contact.username ?: "Connecting...",
+                    text = chatPreview.contact.username ?: "Conectando...",
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
@@ -339,7 +339,7 @@ fun ChatItemPreview() {
                 messageId = 1,
                 senderId = 1,
                 receiverId = 2,
-                text = "Ciao!",
+                text = "¡Hola!",
                 timestamp = System.currentTimeMillis(),
                 messageState = MessageState.MESSAGE_READ,
             ),

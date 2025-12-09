@@ -110,7 +110,7 @@ fun SettingsScreen(
     Scaffold(
         topBar = {
             FlyDropTopAppBar(
-                title = "Settings",
+                title = "Ajustes",
                 canNavigateBack = true,
                 isSettingsScreen = true,
                 onConnectionButtonClick = { settingsViewModel.connect() },
